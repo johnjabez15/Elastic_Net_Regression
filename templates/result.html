@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <h1>Prediction Result</h1>
+        <div class="result-box">
+            <p>The predicted compressive strength is:</p>
+            <!-- This is where the prediction from app.py will be displayed -->
+            <h2>{{ prediction }}</h2>
+        </div>
+        
+        <!-- Button to go back to the home page -->
+        <a href="/" class="back-button">Predict Another Mix</a>
+    </div>
+</body>
+</html>

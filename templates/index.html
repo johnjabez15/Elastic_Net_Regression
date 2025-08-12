@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Strength Predictor</title>
+    <!-- Link to the CSS file. Flask automatically looks for this in the 'static' folder. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Concrete Compressive Strength Prediction</h1>
+        <p class="description">
+            Enter the components of your concrete mix to predict its 28-day compressive strength.
+            All values should be in kilograms per cubic meter (kg/m³) except for age, which is in days.
+        </p>
+
+        <!-- The form submits data to the /predict route in your app.py file -->
+        <form action="/predict" method="post" class="prediction-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="Cement">Cement (kg/m³)</label>
+                    <input type="number" step="any" id="Cement" name="Cement" required>
+                </div>
+                <div class="form-group">
+                    <label for="BlastFurnaceSlag">Blast Furnace Slag (kg/m³)</label>
+                    <input type="number" step="any" id="BlastFurnaceSlag" name="BlastFurnaceSlag" required>
+                </div>
+                <div class="form-group">
+                    <label for="FlyAsh">Fly Ash (kg/m³)</label>
+                    <input type="number" step="any" id="FlyAsh" name="FlyAsh" required>
+                </div>
+                <div class="form-group">
+                    <label for="Water">Water (kg/m³)</label>
+                    <input type="number" step="any" id="Water" name="Water" required>
+                </div>
+                <div class="form-group">
+                    <label for="Superplasticizer">Superplasticizer (kg/m³)</label>
+                    <input type="number" step="any" id="Superplasticizer" name="Superplasticizer" required>
+                </div>
+                <div class="form-group">
+                    <label for="CoarseAggregate">Coarse Aggregate (kg/m³)</label>
+                    <input type="number" step="any" id="CoarseAggregate" name="CoarseAggregate" required>
+                </div>
+                <div class="form-group">
+                    <label for="FineAggregate">Fine Aggregate (kg/m³)</label>
+                    <input type="number" step="any" id="FineAggregate" name="FineAggregate" required>
+                </div>
+                <div class="form-group">
+                    <label for="Age">Age (days)</label>
+                    <input type="number" step="any" id="Age" name="Age" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Get Prediction</button>
+        </form>
+    </div>
+</body>
+</html>
